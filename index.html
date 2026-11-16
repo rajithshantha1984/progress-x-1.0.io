@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080f1d">
+  <title>PROGRESS - X 1.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">X</div>
+        <div>
+          <h1>PROGRESS <span>- X 1.0</span></h1>
+          <p>SMART PROGRESS DASHBOARD</p>
+        </div>
+      </div>
+      <div class="live-status"><span class="live-dot"></span> LIVE PROGRESS</div>
+    </header>
+
+    <main>
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR PERSONAL PROGRESS ASSISTANT</p>
+          <h2>Turn your tasks into <span>progress.</span></h2>
+          <p class="hero-description">PROGRESS - X is your smart progress dashboard that helps you plan, track, and achieve more.</p>
+        </div>
+        <div class="hero-watermark" aria-hidden="true">X</div>
+      </section>
+
+      <section class="overall panel" aria-labelledby="overall-title">
+        <div class="overall-content">
+          <p class="section-kicker">PLAN, TRACK, AND ACHIEVEMENTS</p>
+          <h2 id="overall-title">Your Overall Progress</h2>
+          <div class="progress-track" role="progressbar" aria-label="Overall task progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-caption" id="progressCaption">0 of 0 tasks</p>
+        </div>
+        <div class="progress-ring" id="progressRing" role="img" aria-label="0 percent complete">
+          <div class="ring-inner">
+            <strong id="progressPercent">0%</strong>
+            <span>COMPLETE</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Task statistics">
+        <article class="stat-card panel">
+          <div class="stat-icon icon-blue" aria-hidden="true">▤</div>
+          <p>Total Tasks</p>
+          <strong id="totalTasks">0</strong>
+        </article>
+        <article class="stat-card panel">
+          <div class="stat-icon icon-green" aria-hidden="true">✓</div>
+          <p>Completed</p>
+          <strong id="completedTasks">0</strong>
+        </article>
+        <article class="stat-card panel">
+          <div class="stat-icon icon-purple" aria-hidden="true">◷</div>
+          <p>Remaining</p>
+          <strong id="remainingTasks">0</strong>
+        </article>
+      </section>
+
+      <section class="workspace panel" aria-labelledby="tasks-title">
+        <p class="eyebrow">WORKSPACE</p>
+        <h2 id="tasks-title">My Tasks</h2>
+        <form id="taskForm" class="add-task-form">
+          <label class="visually-hidden" for="taskInput">Task description</label>
+          <input id="taskInput" type="text" maxlength="180" placeholder="What do you want to accomplish?" autocomplete="off" required>
+          <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add Task</button>
+        </form>
+        <p class="form-hint">Press Enter or select Add Task to create a task.</p>
+        <div class="task-heading-row">
+          <h3>All Tasks <span id="taskCountLabel">(0)</span></h3>
+          <button id="clearCompletedBtn" class="text-button" type="button" hidden>Clear completed</button>
+        </div>
+        <div id="taskList" class="task-list" aria-live="polite"></div>
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon" aria-hidden="true">✦</div>
+          <strong>Your progress starts here.</strong>
+          <p>Add your first task above and start building momentum.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p><strong>PROGRESS - X</strong> · BUILD YOUR NEXT LEVEL.</p>
+      <span>Version 1.0</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
